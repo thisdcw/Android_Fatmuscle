@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/survey_fragment"
+        android:icon="@mipmap/mine"
+        android:title="测量"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/curve_fragment"
+        android:icon="@mipmap/mine"
+        android:title="曲线"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/profile_fragment"
+        android:icon="@mipmap/mine"
+        android:title="我的"
+        app:showAsAction="always"/>
+</menu>
