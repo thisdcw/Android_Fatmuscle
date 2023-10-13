@@ -31,7 +31,6 @@ public class CustomerViewPager extends ViewPager {
             return false;
         } else {
             return super.onTouchEvent(arg0);
-
         }
     }
 
@@ -41,7 +40,6 @@ public class CustomerViewPager extends ViewPager {
             return false;
         } else {
             return super.onInterceptTouchEvent(arg0);
-
         }
 
     }

@@ -1,0 +1,2 @@
+ninja: Entering directory `D:\Project\Android Project\Android_Fatmuscle\opencv\.cxx\Debug\3p6r225v\x86'
+ninja: no work to do.

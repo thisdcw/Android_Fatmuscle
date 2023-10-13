@@ -1,6 +1,7 @@
 package com.maxsella.cw.fatmuscle.common.base;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,5 +43,10 @@ public class BaseFragment extends Fragment {
 
     protected void showMsg(String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+    }
+    // 封装的跳转方法，接受上下文和目标Activity的类作为参数
+    public static void navigateToActivity(Context context, Class<?> targetActivityClass) {
+        Intent intent = new Intent(context, targetActivityClass);
+        context.startActivity(intent);
     }
 }

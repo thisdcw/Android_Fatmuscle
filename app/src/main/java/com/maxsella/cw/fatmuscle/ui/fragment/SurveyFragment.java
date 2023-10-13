@@ -16,8 +16,10 @@ import android.view.ViewGroup;
 
 import com.maxsella.cw.fatmuscle.R;
 import com.maxsella.cw.fatmuscle.common.base.BaseFragment;
+import com.maxsella.cw.fatmuscle.common.util.BitmapUtil;
 import com.maxsella.cw.fatmuscle.databinding.DialogSelectUserBinding;
 import com.maxsella.cw.fatmuscle.databinding.FragmentSurveyBinding;
+import com.maxsella.cw.fatmuscle.ui.activity.DeviceInfoActivity;
 import com.maxsella.cw.fatmuscle.ui.dialog.SelectItemDialog;
 import com.maxsella.cw.fatmuscle.ui.dialog.SelectUserDialog;
 import com.maxsella.cw.fatmuscle.viewmodel.SurveyViewModel;
@@ -58,7 +60,9 @@ public class SurveyFragment extends BaseFragment {
             selectItemDialog.show();
             Log.d(TAG, "onClick: 点击了selectItemBtn");
         });
-
+        surveyBinding.deviceInfo.setOnClickListener(v -> {
+            navigateToActivity(getActivity(), DeviceInfoActivity.class);
+        });
     }
 
     private void initDialog() {
