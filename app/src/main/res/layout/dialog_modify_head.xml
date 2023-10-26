@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lay_modify_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_album_selection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/arc3"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="相册选择"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_camera_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/arc3"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="相机拍照"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_close"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/arc3"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="关闭"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

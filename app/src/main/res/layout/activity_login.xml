@@ -13,7 +13,7 @@
         android:background="@color/white"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context=".ui.activity.LoginActivity">
+        tools:context="com.maxsella.fatmuscle.ui.activity.LoginActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,7 +92,7 @@
                 android:textSize="14sp" />
 
         </LinearLayout>
-
+        <!--手机登录-->
         <LinearLayout
             android:id="@+id/lyt_tel"
             android:layout_width="335dp"
@@ -123,7 +123,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="14dp"
-                    android:hint="输入手机号"
+                    android:hint="手机号"
+                    android:text="12345678910"
+                    android:inputType="number"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"
                     android:textSize="14sp" />
@@ -136,7 +138,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="335dp"
@@ -156,6 +159,7 @@
                     android:layout_marginStart="14dp"
                     android:hint="密码"
                     android:inputType="textPassword"
+                    android:text="123"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"
                     android:textSize="14sp" />
@@ -180,16 +184,16 @@
                 android:id="@+id/to_forget"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text="忘记密码" />
+                android:text="忘记密码"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/to_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="247dp"
-                android:textColor="@color/black"
-                android:text="注册" />
+                android:text="注册"
+                android:textColor="@color/black" />
 
 
         </LinearLayout>

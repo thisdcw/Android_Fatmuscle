@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".ui.fragment.WaistFragment">
+        tools:context="com.maxsella.fatmuscle.ui.fragment.item.WaistFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -88,6 +88,7 @@
                 android:textColor="@color/black" />
 
             <LinearLayout
+                android:id="@+id/llt_record"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp">
@@ -101,6 +102,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btn_report"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="分析报告" />

@@ -16,8 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            android:background="@color/white"
-            tools:context=".ui.activity.MainActivity">
+            tools:context="com.maxsella.fatmuscle.ui.activity.MainActivity">
 
             <fragment
                 android:id="@+id/nav_host_fragment"

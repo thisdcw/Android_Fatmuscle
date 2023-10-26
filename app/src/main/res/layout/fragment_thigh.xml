@@ -9,7 +9,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragment.ThighFragment">
+        tools:context="com.maxsella.fatmuscle.ui.fragment.item.ThighFragment">
 
         <TextView
             android:layout_width="match_parent"

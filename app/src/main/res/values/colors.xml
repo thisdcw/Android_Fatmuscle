@@ -8,4 +8,5 @@
     <color name="arc23">#079df9</color>
     <color name="arc2">#37d547</color>
     <color name="arc3">#f86669</color>
+    <color name="transparent">#00000000</color>
 </resources>

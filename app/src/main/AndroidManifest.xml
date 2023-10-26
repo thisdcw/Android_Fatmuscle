@@ -3,9 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-feature android:name="android.hardware.usb.host" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <application
-        android:name=".common.MyApplication"
+        android:name="com.maxsella.fatmuscle.common.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,19 +24,79 @@
         android:theme="@style/Theme.Android_Fatmuscle"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activity.DeviceInfoActivity"
+            android:name="com.maxsella.fatmuscle.ui.activity.EditMemberNicknameActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.LoginForgetActivity"
+            android:name="com.maxsella.fatmuscle.ui.activity.EditMemberActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.RegisterActivity"
+            android:name="com.maxsella.fatmuscle.ui.activity.HardwareActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name="com.maxsella.fatmuscle.ui.activity.RecordDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.RecordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.ReportActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.EditTelephoneActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.BindEmailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.EditPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.AccountManageActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.AddMemberActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.EditNicknameActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.FeedBackActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.UseProblemActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.InstructionActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.UserManagerActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.UserInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.WorkActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.DeviceInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.LoginForgetActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.maxsella.fatmuscle.ui.activity.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.activity.LoginActivity"
+            android:name="com.maxsella.fatmuscle.ui.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,6 +104,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="com.maxsella.fatmuscle.service.OnlineService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.maxsella.fatmuscle.service.MainReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
 
         <meta-data
             android:name="design_width_in_dp"

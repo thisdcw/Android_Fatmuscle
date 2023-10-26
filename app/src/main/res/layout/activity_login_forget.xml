@@ -13,7 +13,7 @@
         android:background="@color/white"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context=".ui.activity.LoginForgetActivity">
+        tools:context="com.maxsella.fatmuscle.ui.activity.LoginForgetActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,6 +23,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/back_btn"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:background="@color/black" />

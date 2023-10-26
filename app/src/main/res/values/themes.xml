@@ -1,9 +1,39 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Android_Fatmuscle" parent="Theme.MaterialComponents.NoActionBar.Bridge">
+    <style name="Base.Theme.Android_Fatmuscle" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- 设置默认字体颜色 -->
+        <item name="android:textColorPrimary">@color/black</item>
+        <!-- 设置背景颜色 -->
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+    <!-- 圆形图片 -->
+    <style name="circleImageStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="AppDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="DialogFromBottomAnim">
+        <item name="android:windowEnterAnimation">@anim/dialog_from_bottom_anim_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_from_bottom_anim_out</item>
     </style>
 
+    <style name="DialogFromTopAnim">
+        <item name="android:windowEnterAnimation">@anim/dialog_from_top_anim_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_from_top_anim_out</item>
+    </style>
+
+    <style name="DialogScaleAnim">
+        <item name="android:windowEnterAnimation">@anim/dialog_scale_anim_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_scale_anim_out</item>
+    </style>
     <style name="Theme.Android_Fatmuscle" parent="Base.Theme.Android_Fatmuscle" />
 </resources>

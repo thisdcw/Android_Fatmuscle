@@ -1,3 +1,0 @@
-ninja: Entering directory `D:\Project\Android Project\Android_Fatmuscle\opencv\.cxx\Debug\3p6r225v\x86_64'
-[1/2] Building CXX object CMakeFiles/opencv_jni_shared.dir/dummy.cpp.o
-[2/2] Linking CXX static library libopencv_jni_shared.a

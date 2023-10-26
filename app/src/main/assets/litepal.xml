@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="fatmuscle"/>
+    <version value="2"/>
+    <list>
+        <mapping class="com.maxsella.fatmuscle.db.bean.User" />
+        <mapping class="com.maxsella.fatmuscle.db.bean.Record" />
+        <mapping class="com.maxsella.fatmuscle.db.bean.Member" />
+    </list>
+</litepal>

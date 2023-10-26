@@ -6,17 +6,17 @@
     android:id="@+id/nav_graph">
     <fragment
         android:id="@+id/curve_fragment"
-        android:name="com.maxsella.cw.fatmuscle.ui.fragment.CurveFragment"
+        android:name="com.maxsella.fatmuscle.ui.fragment.CurveFragment"
         android:label="curve_fragment"
         tools:layout="@layout/fragment_curve" />
     <fragment
         android:id="@+id/survey_fragment"
-        android:name="com.maxsella.cw.fatmuscle.ui.fragment.SurveyFragment"
+        android:name="com.maxsella.fatmuscle.ui.fragment.SurveyFragment"
         android:label="survey_fragment"
         tools:layout="@layout/fragment_survey" />
     <fragment
         android:id="@+id/profile_fragment"
-        android:name="com.maxsella.cw.fatmuscle.ui.fragment.ProfileFragment"
+        android:name="com.maxsella.fatmuscle.ui.fragment.ProfileFragment"
         android:label="profile_fragment"
         tools:layout="@layout/fragment_profile" />
 </navigation>

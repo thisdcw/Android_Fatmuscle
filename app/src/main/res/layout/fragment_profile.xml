@@ -1,23 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
+        <variable
+            name="userViewmodel"
+            type="com.maxsella.fatmuscle.viewmodel.UserInfoViewModel" />
     </data>
 
-    <FrameLayout
-        android:id="@+id/profile_fragment"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        tools:context=".ui.fragment.ProfileFragment">
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
 
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColor="@color/black"
-            android:text="我的" />
+            android:layout_height="match_parent">
 
-    </FrameLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="140dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/llt_manager"
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp"
+                        android:layout_marginTop="40dp"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="成员管理"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/vector" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llt_instruction"
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="使用指南"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/vector" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llt_problem"
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="常见问题"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="50dp"
+                            android:src="@drawable/vector" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llt_feedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="意见反馈"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="50dp"
+                            android:src="@drawable/vector" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llt_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="设置"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="50dp"
+                            android:src="@drawable/vector" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/llt_user_info"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:paddingHorizontal="20dp">
+
+                <com.maxsella.fatmuscle.view.CustomerImageView
+                    url="@{userViewmodel.user.head_img}"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:shapeAppearanceOverlay="@style/circleImageStyle" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_weight="1"
+                    android:text="@={userViewmodel.user.nickname}"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/edit" />
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
 </layout>

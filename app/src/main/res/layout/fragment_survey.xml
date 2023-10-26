@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="userViewModel"
+            type="com.maxsella.fatmuscle.viewmodel.UserInfoViewModel" />
     </data>
 
     <FrameLayout
@@ -11,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".ui.fragment.SurveyFragment">
+        tools:context="com.maxsella.fatmuscle.ui.fragment.SurveyFragment">
 
         <LinearLayout
             android:id="@+id/lyt"
@@ -40,8 +43,9 @@
                 android:layout_marginTop="30dp"
                 android:gravity="center">
 
-                <TextView
+                <com.maxsella.fatmuscle.view.CustomerImageView
                     android:id="@+id/select_user_btn"
+                    url="@{userViewModel.user.head_img}"
                     android:layout_width="160dp"
                     android:layout_height="100dp"
                     android:background="#BFAEAE"
@@ -71,6 +75,12 @@
                 android:layout_height="wrap_content"
                 android:text="提示"
                 android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/to_work"
+                android:layout_width="335dp"
+                android:layout_height="50dp"
+                android:text="进入工作页面" />
         </LinearLayout>
     </FrameLayout>
 </layout>
