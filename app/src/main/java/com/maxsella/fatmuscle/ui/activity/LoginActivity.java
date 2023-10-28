@@ -10,12 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityLoginBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityLoginBinding;
 import com.maxsella.fatmuscle.common.util.ActivityStackManager;
 import com.maxsella.fatmuscle.common.util.Config;
 import com.maxsella.fatmuscle.common.util.LogUtil;
 import com.maxsella.fatmuscle.db.bean.User;
+import com.maxsella.fatmuscle.db.helper.UserHelper;
 import com.maxsella.fatmuscle.viewmodel.LoginViewModel;
 
 public class LoginActivity extends AppCompatActivity {
@@ -62,27 +63,27 @@ public class LoginActivity extends AppCompatActivity {
             ActivityStackManager.getInstance().startActivity(this, LoginForgetActivity.class);
         });
         loginBinding.loginBtn.setOnClickListener(v -> {
-            if (!Config.isDebug) {
-                ActivityStackManager.getInstance().startActivity(this, MainActivity.class);
-                showMsg("登录成功");
-            } else {
-                if (isEmail) {
-                    if (loginViewModel.toLogin(loginBinding.edtEmail.getText().toString().trim(), loginBinding.edtPassword.getText().toString().trim())) {
-                        showMsg("登录成功");
-                        ActivityStackManager.getInstance().startActivity(this, MainActivity.class);
-                    } else {
-                        showMsg(loginViewModel.failed);
-                    }
+            if (isEmail) {
+                if (loginViewModel.toLogin(loginBinding.edtEmail.getText().toString().trim(), loginBinding.edtPassword.getText().toString().trim())) {
+                    showMsg("登录成功");
+                    ActivityStackManager.getInstance().startActivity(this, MainActivity.class);
                 } else {
-                    if (loginViewModel.toLogin(loginBinding.edtTel.getText().toString().trim(), loginBinding.edtPassword.getText().toString().trim())) {
-                        showMsg("登录成功");
-                        ActivityStackManager.getInstance().startActivity(this, MainActivity.class);
-                    } else {
-                        showMsg(loginViewModel.failed);
-                    }
+                    showMsg(loginViewModel.failed);
+                }
+            } else {
+                if (loginViewModel.toLogin(loginBinding.edtTel.getText().toString().trim(), loginBinding.edtPassword.getText().toString().trim())) {
+                    showMsg("登录成功");
+                    ActivityStackManager.getInstance().startActivity(this, MainActivity.class);
+                } else {
+                    showMsg(loginViewModel.failed);
                 }
             }
+
         });
+    }
+
+    public void navTo(Class<?> cls) {
+        ActivityStackManager.getInstance().startActivity(this, cls);
     }
 
     protected void showMsg(String msg) {

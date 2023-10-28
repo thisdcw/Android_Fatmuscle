@@ -6,13 +6,13 @@ import androidx.databinding.DataBindingUtil;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityHardwareBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityHardwareBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 
 public class HardwareActivity extends BaseActivity {
 
-    ActivityHardwareBinding hardwareBinding;
+    private ActivityHardwareBinding hardwareBinding;
 
     @Override
     protected void initView() {

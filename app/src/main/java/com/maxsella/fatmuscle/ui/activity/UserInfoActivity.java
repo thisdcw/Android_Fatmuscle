@@ -28,10 +28,10 @@ import com.lxj.xpopupext.listener.CommonPickerListener;
 import com.lxj.xpopupext.listener.TimePickerListener;
 import com.lxj.xpopupext.popup.CommonPickerPopup;
 import com.lxj.xpopupext.popup.TimePickerPopup;
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityUserInfoBinding;
-import com.maxsella.cw.fatmuscle.databinding.DialogModifyHeadBinding;
-import com.maxsella.cw.fatmuscle.databinding.FragmentProfileBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityUserInfoBinding;
+import com.maxsella.fatmuscle.databinding.DialogModifyHeadBinding;
+import com.maxsella.fatmuscle.databinding.FragmentProfileBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 import com.maxsella.fatmuscle.common.util.CameraUtils;
 import com.maxsella.fatmuscle.common.util.LogUtil;
@@ -84,6 +84,7 @@ public class UserInfoActivity extends BaseActivity {
     @Override
     protected void initView() {
         userInfoBinding = DataBindingUtil.setContentView(this, R.layout.activity_user_info);
+        userInfoViewModel.setLifecycleOwner(this);
         userInfoViewModel.user.observe(this, user -> {
             user1 = user;
             LogUtil.d("user: " + user);

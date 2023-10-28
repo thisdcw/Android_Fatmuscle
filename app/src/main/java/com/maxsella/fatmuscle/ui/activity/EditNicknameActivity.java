@@ -2,8 +2,8 @@ package com.maxsella.fatmuscle.ui.activity;
 
 import androidx.databinding.DataBindingUtil;
 
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityEditNicknameBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityEditNicknameBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 import com.maxsella.fatmuscle.common.util.LogUtil;
 import com.maxsella.fatmuscle.common.util.TextWatchUtil;

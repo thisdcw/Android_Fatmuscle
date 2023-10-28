@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <application
-        android:name="com.maxsella.fatmuscle.common.MyApplication"
+        android:name=".common.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -24,79 +24,82 @@
         android:theme="@style/Theme.Android_Fatmuscle"
         tools:targetApi="31">
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.EditMemberNicknameActivity"
+            android:name=".ui.activity.FirstEditActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.EditMemberActivity"
+            android:name=".ui.activity.EditMemberNicknameActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.HardwareActivity"
+            android:name=".ui.activity.EditMemberActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.RecordDetailActivity"
+            android:name=".ui.activity.HardwareActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.RecordActivity"
+            android:name=".ui.activity.RecordDetailActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.ReportActivity"
+            android:name=".ui.activity.RecordActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.EditTelephoneActivity"
+            android:name=".ui.activity.ReportActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.BindEmailActivity"
+            android:name=".ui.activity.EditTelephoneActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.EditPasswordActivity"
+            android:name=".ui.activity.BindEmailActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.AccountManageActivity"
+            android:name=".ui.activity.EditPasswordActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.AboutActivity"
+            android:name=".ui.activity.AccountManageActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.AddMemberActivity"
+            android:name=".ui.activity.AboutActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.EditNicknameActivity"
+            android:name=".ui.activity.AddMemberActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.SettingsActivity"
+            android:name=".ui.activity.EditNicknameActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.FeedBackActivity"
+            android:name=".ui.activity.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.UseProblemActivity"
+            android:name=".ui.activity.FeedBackActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.InstructionActivity"
+            android:name=".ui.activity.UseProblemActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.UserManagerActivity"
+            android:name=".ui.activity.InstructionActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.UserInfoActivity"
+            android:name=".ui.activity.UserManagerActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.WorkActivity"
+            android:name=".ui.activity.UserInfoActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.DeviceInfoActivity"
+            android:name=".ui.activity.WorkActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.LoginForgetActivity"
+            android:name=".ui.activity.DeviceInfoActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.RegisterActivity"
+            android:name=".ui.activity.LoginForgetActivity"
             android:exported="false" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.MainActivity"
+            android:name=".ui.activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.maxsella.fatmuscle.ui.activity.LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -106,12 +109,12 @@
         </activity>
 
         <service
-            android:name="com.maxsella.fatmuscle.service.OnlineService"
+            android:name=".service.OnlineService"
             android:enabled="true"
             android:exported="false" />
 
         <receiver
-            android:name="com.maxsella.fatmuscle.service.MainReceiver"
+            android:name=".service.MainReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>

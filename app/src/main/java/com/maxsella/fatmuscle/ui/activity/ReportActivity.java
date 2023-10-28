@@ -5,13 +5,13 @@ import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityReportBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityReportBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 
 public class ReportActivity extends BaseActivity {
 
-    ActivityReportBinding reportBinding;
+    private ActivityReportBinding reportBinding;
 
     @Override
     protected void initView() {

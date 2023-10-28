@@ -14,6 +14,16 @@ public class User extends LitePalSupport {
     private String telephone;
     private String password;
 
+    private boolean isFirst;
+
+    public boolean isFirst() {
+        return isFirst;
+    }
+
+    public void setFirst(boolean first) {
+        isFirst = first;
+    }
+
     private int isLogin;
 
     public int getUserId() {
@@ -33,6 +43,9 @@ public class User extends LitePalSupport {
     }
 
     public String getNickname() {
+        if (nickname==null){
+            nickname = "";
+        }
         return nickname;
     }
 
@@ -110,13 +123,14 @@ public class User extends LitePalSupport {
                 "userId=" + userId +
                 ", head_img='" + head_img + '\'' +
                 ", nickname='" + nickname + '\'' +
-                ", sex=" + sex +
+                ", sex='" + sex + '\'' +
                 ", birth='" + birth + '\'' +
                 ", height='" + height + '\'' +
                 ", weight='" + weight + '\'' +
                 ", email='" + email + '\'' +
                 ", telephone='" + telephone + '\'' +
                 ", password='" + password + '\'' +
+                ", isFirst=" + isFirst +
                 ", isLogin=" + isLogin +
                 '}';
     }

@@ -5,14 +5,14 @@ import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityEditPasswordBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityEditPasswordBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 import com.maxsella.fatmuscle.viewmodel.UserInfoViewModel;
 
 public class EditPasswordActivity extends BaseActivity {
 
-    ActivityEditPasswordBinding editPasswordBinding;
+    private ActivityEditPasswordBinding editPasswordBinding;
 
     private UserInfoViewModel userInfoViewModel = new UserInfoViewModel();
 

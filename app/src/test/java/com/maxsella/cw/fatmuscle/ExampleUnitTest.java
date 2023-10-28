@@ -1,4 +1,4 @@
-package com.maxsella.cw.fatmuscle;
+package com.maxsella.fatmuscle;
 
 import org.junit.Test;
 

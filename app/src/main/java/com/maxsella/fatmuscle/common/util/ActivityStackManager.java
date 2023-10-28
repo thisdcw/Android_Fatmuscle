@@ -49,6 +49,18 @@ public class ActivityStackManager {
     }
 
     /**
+     * 不结束当前页面并携带参数跳转
+     *
+     * @param currentActivity
+     * @param targetActivity
+     */
+    public void startActivityNoFinish(Activity currentActivity, Class<?> targetActivity,Bundle bundle) {
+        Intent intent = new Intent(currentActivity, targetActivity);
+        intent.putExtras(bundle);
+        currentActivity.startActivity(intent);
+    }
+
+    /**
      * 携带参数结束当前页面跳转
      *
      * @param currentActivity

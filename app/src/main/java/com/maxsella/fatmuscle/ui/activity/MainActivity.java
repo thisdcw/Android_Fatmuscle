@@ -8,10 +8,11 @@ import androidx.navigation.Navigation;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.maxsella.cw.fatmuscle.R;
+import com.maxsella.fatmuscle.R;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
+import com.maxsella.fatmuscle.common.util.Config;
 import com.maxsella.fatmuscle.common.util.LogUtil;
-import com.maxsella.cw.fatmuscle.databinding.ActivityMainBinding;
+import com.maxsella.fatmuscle.databinding.ActivityMainBinding;
 
 public class MainActivity extends BaseActivity {
 

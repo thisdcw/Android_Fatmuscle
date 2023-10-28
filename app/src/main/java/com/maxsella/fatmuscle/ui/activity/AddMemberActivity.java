@@ -27,9 +27,9 @@ import com.lxj.xpopupext.listener.CommonPickerListener;
 import com.lxj.xpopupext.listener.TimePickerListener;
 import com.lxj.xpopupext.popup.CommonPickerPopup;
 import com.lxj.xpopupext.popup.TimePickerPopup;
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityAddMemberBinding;
-import com.maxsella.cw.fatmuscle.databinding.DialogModifyHeadBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityAddMemberBinding;
+import com.maxsella.fatmuscle.databinding.DialogModifyHeadBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 import com.maxsella.fatmuscle.common.util.CameraUtils;
 import com.maxsella.fatmuscle.common.util.LogUtil;
@@ -114,8 +114,16 @@ public class AddMemberActivity extends BaseActivity {
         });
         addUserBinding.btnSave.setOnClickListener(v -> {
             LogUtil.d("点击了");
-            memberViewModel.addMember(member1);
-            navTo(UserManagerActivity.class);
+            if (addUserBinding.tvNickname.getText().toString().trim().equals("")) {
+                member1.setNickname("");
+            }
+            if (memberViewModel.addMember(member1)) {
+                showMsg(memberViewModel.msg);
+                navTo(UserManagerActivity.class);
+            } else {
+                showMsg(memberViewModel.failed);
+            }
+
         });
     }
 

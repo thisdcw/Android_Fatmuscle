@@ -2,17 +2,15 @@ package com.maxsella.fatmuscle.viewmodel;
 
 import com.maxsella.fatmuscle.common.base.BaseViewModel;
 import com.maxsella.fatmuscle.db.bean.User;
-import com.maxsella.fatmuscle.repository.ForgetRepository;
-
-import org.litepal.LitePal;
+import com.maxsella.fatmuscle.repository.AccountRepository;
 
 import java.util.regex.Pattern;
 
 public class ForgetViewModel extends BaseViewModel {
 
-    private ForgetRepository forgetRepository = new ForgetRepository();
-    String patternPhone = "^1\\d{10}$";
-    String patternEmail = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+. [a-zA-Z]{2,}$";
+    private AccountRepository accountRepository = new AccountRepository();
+    private String patternPhone = "^1\\d{10}$";
+    private String patternEmail = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+. [a-zA-Z]{2,}$";
 
     private String code = "";
     private User user = new User();
@@ -31,12 +29,12 @@ public class ForgetViewModel extends BaseViewModel {
                 failed = "验证码错误";
                 return false;
             }
-            forgetRepository.updateUser(user);
+            accountRepository.updateUser(user);
             return true;
         } else if (email.matcher(contact).find()) {
             user.setEmail(contact);
             user.setPassword(password);
-            forgetRepository.updateUser(user);
+            accountRepository.updateUser(user);
             return true;
         }
         failed = "账号或密码不符合规则";
@@ -44,7 +42,7 @@ public class ForgetViewModel extends BaseViewModel {
     }
 
     public void getVerifyCode() {
-        code = forgetRepository.getVerifyCode();
+        code = accountRepository.getVerifyCode();
     }
 
 }

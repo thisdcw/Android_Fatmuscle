@@ -13,7 +13,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.azhon.appupdate.manager.DownloadManager;
-import com.maxsella.cw.fatmuscle.R;
+import com.maxsella.fatmuscle.R;
 import com.maxsella.fatmuscle.common.util.ActivityStackManager;
 import com.maxsella.fatmuscle.common.util.PermissionUtils;
 import com.maxsella.fatmuscle.ui.activity.AccountManageActivity;

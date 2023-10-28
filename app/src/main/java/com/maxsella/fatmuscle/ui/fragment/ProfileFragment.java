@@ -3,8 +3,8 @@ package com.maxsella.fatmuscle.ui.fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.azhon.appupdate.manager.DownloadManager;
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.FragmentProfileBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.FragmentProfileBinding;
 import com.maxsella.fatmuscle.model.UpdateInfo;
 import com.maxsella.fatmuscle.common.base.BaseFragment;
 import com.maxsella.fatmuscle.common.util.LogUtil;
@@ -45,6 +45,7 @@ public class ProfileFragment extends BaseFragment {
     public void initEventAndData() {
         profileBinding = getProfileBinding();
         mViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
+        userInfoViewModel.setLifecycleOwner(this);
         userInfoViewModel.user.observe(this, user -> {
             profileBinding.setUserViewmodel(userInfoViewModel);
         });

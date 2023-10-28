@@ -2,11 +2,11 @@ plugins {
     id 'com.android.application'
 }
 android {
-    namespace 'com.maxsella.cw.fatmuscle'
+    namespace 'com.maxsella.fatmuscle'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.maxsella.cw.fatmuscle"
+        applicationId "com.maxsella.fatmuscle"
         minSdk 24
         targetSdk 33
         versionCode 1

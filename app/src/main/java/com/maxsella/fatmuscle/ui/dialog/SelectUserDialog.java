@@ -8,8 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.DialogSelectUserBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.DialogSelectUserBinding;
 
 public class SelectUserDialog extends Dialog {
 

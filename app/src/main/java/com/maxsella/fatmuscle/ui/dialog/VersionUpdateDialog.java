@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.maxsella.cw.fatmuscle.R;
+import com.maxsella.fatmuscle.R;
 import com.maxsella.fatmuscle.common.util.NavigationBarUtil;
 
 public class VersionUpdateDialog extends Dialog {

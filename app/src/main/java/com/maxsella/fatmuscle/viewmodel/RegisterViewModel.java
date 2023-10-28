@@ -1,8 +1,9 @@
 package com.maxsella.fatmuscle.viewmodel;
 
 import com.maxsella.fatmuscle.common.base.BaseViewModel;
+import com.maxsella.fatmuscle.common.util.LogUtil;
 import com.maxsella.fatmuscle.db.bean.User;
-import com.maxsella.fatmuscle.repository.RegisterRepository;
+import com.maxsella.fatmuscle.repository.AccountRepository;
 
 import org.litepal.LitePal;
 
@@ -10,9 +11,9 @@ import java.util.regex.Pattern;
 
 public class RegisterViewModel extends BaseViewModel {
 
-    private RegisterRepository registerRepository = new RegisterRepository();
-    String patternPhone = "^1\\d{10}$";
-    String patternEmail = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{1,}$";
+    private AccountRepository accountRepository = new AccountRepository();
+    private String patternPhone = "^1\\d{10}$";
+    private String patternEmail = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{1,}$";
     private User user = new User();
 
     private String verifyCode = "";
@@ -28,7 +29,7 @@ public class RegisterViewModel extends BaseViewModel {
             user.setUserId(lastUser.getUserId() + 1);
         }
         if (phone.matcher(contact).find()) {
-            if (registerRepository.verifyTel(contact)){
+            if (accountRepository.verifyTel(contact)){
                 failed = "手机号已被其他账号绑定";
                 return false;
             }
@@ -46,10 +47,13 @@ public class RegisterViewModel extends BaseViewModel {
             }
             user.setTelephone(contact);
             user.setPassword(password);
-            msg = registerRepository.saveUser(user);
+            user.setFirst(true);
+            user.setNickname(contact);
+            accountRepository.updateUser(user);
+            LogUtil.d("register: "+user.toString());
             return true;
         } else if (email.matcher(contact).find()) {
-            if (registerRepository.verifyEmail(contact)){
+            if (accountRepository.verifyEmail(contact)){
                 failed = "邮箱已被其他邮箱绑定";
                 return false;
             }
@@ -59,7 +63,10 @@ public class RegisterViewModel extends BaseViewModel {
             }
             user.setEmail(contact);
             user.setPassword(password);
-            msg = registerRepository.saveUser(user);
+            user.setFirst(true);
+            user.setNickname(contact);
+            accountRepository.updateUser(user);
+            LogUtil.d("register: "+user.toString());
             return true;
         }
         failed = "账号或密码不符合规则";
@@ -67,7 +74,7 @@ public class RegisterViewModel extends BaseViewModel {
     }
 
     public void getVerifyCode() {
-        verifyCode = registerRepository.getVerifyCode();
+        verifyCode = accountRepository.getVerifyCode();
     }
 
 }

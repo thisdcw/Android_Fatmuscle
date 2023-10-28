@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.DataBindingHolder;
-import com.maxsella.cw.fatmuscle.databinding.ItemMemberBinding;
+import com.maxsella.fatmuscle.databinding.ItemMemberBinding;
 import com.maxsella.fatmuscle.common.util.LogUtil;
 import com.maxsella.fatmuscle.db.bean.Member;
 import com.maxsella.fatmuscle.ui.activity.EditMemberActivity;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -43,25 +44,54 @@
                 android:layout_marginTop="30dp"
                 android:gravity="center">
 
-                <com.maxsella.fatmuscle.view.CustomerImageView
-                    android:id="@+id/select_user_btn"
-                    url="@{userViewModel.user.head_img}"
+                <LinearLayout
                     android:layout_width="160dp"
                     android:layout_height="100dp"
                     android:background="#BFAEAE"
-                    android:gravity="center"
-                    android:text="测量者"
-                    android:textColor="@color/black" />
+                    android:gravity="center">
 
-                <TextView
-                    android:id="@+id/select_item_btn"
+                    <com.maxsella.fatmuscle.view.CustomerImageView
+                        url="@{userViewModel.user.head_img}"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:text="测量者"
+                        android:textColor="@color/black"
+                        app:shapeAppearanceOverlay="@style/circleImageStyle" />
+
+                    <ImageView
+                        android:id="@+id/select_user_btn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="160dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="20dp"
                     android:background="#BFAEAE"
-                    android:gravity="center"
-                    android:text="测量部位"
-                    android:textColor="@color/black" />
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:text="测量项目"
+                        android:textColor="@color/black"
+                        app:shapeAppearanceOverlay="@style/circleImageStyle" />
+
+                    <TextView
+                        android:id="@+id/currentMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center"
+                        android:text="fat_waist"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+
             </LinearLayout>
 
             <ImageView
@@ -81,6 +111,11 @@
                 android:layout_width="335dp"
                 android:layout_height="50dp"
                 android:text="进入工作页面" />
+            <Button
+                android:id="@+id/deleteAllRecords"
+                android:layout_width="335dp"
+                android:layout_height="50dp"
+                android:text="模拟删除所有记录" />
         </LinearLayout>
     </FrameLayout>
 </layout>

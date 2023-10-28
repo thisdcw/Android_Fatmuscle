@@ -34,4 +34,14 @@ public class MemberRepository {
         return MemberHelper.getInstance().getMemberById(id);
     }
 
+    public boolean verifyName(String name) {
+        List<String> names = getAllName();
+        names.add(UserHelper.getInstance().getLoginUser().getNickname());
+        return names.contains(name);
+    }
+
+    public List<String> getAllName() {
+        return MemberHelper.getInstance().getAllMemberName();
+    }
+
 }

@@ -1,18 +1,17 @@
 package com.maxsella.fatmuscle.viewmodel;
 
 import com.maxsella.fatmuscle.common.base.BaseViewModel;
+import com.maxsella.fatmuscle.common.util.Config;
 import com.maxsella.fatmuscle.common.util.LogUtil;
 import com.maxsella.fatmuscle.db.bean.User;
-import com.maxsella.fatmuscle.repository.LoginRepository;
-
-import java.util.regex.Pattern;
+import com.maxsella.fatmuscle.db.helper.UserHelper;
+import com.maxsella.fatmuscle.repository.AccountRepository;
 
 public class LoginViewModel extends BaseViewModel {
 
-    private LoginRepository loginRepository = new LoginRepository();
+    private AccountRepository accountRepository = new AccountRepository();
     private User user = new User();
-    String patternPhone = "^1\\d{10}$";
-    String patternEmail = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{1,}$";
+
     public boolean toLogin(String contact, String password) {
         LogUtil.d("toLogin: " + contact + password);
         if (contact.equals("")) {
@@ -31,6 +30,7 @@ public class LoginViewModel extends BaseViewModel {
         }
         if (user.getPassword().equals(password)) {
             changeLoginStatus(1);
+            Config.saveOrUpdateChooseMember(UserHelper.getInstance().getLoginUser().getNickname());
             LogUtil.d(user.toString());
             return true;
         }
@@ -39,9 +39,9 @@ public class LoginViewModel extends BaseViewModel {
     }
 
     public User getUser(String contact) {
-        User localUser = loginRepository.getLocalUser(contact);
+        User localUser = accountRepository.getLocalUser(contact);
         if (localUser != null) {
-            LogUtil.d("not empty");
+            LogUtil.d("not empty"+localUser.toString());
             user = localUser;
             return user;
         }
@@ -50,7 +50,12 @@ public class LoginViewModel extends BaseViewModel {
 
     public void changeLoginStatus(int isLogin) {
         user.setIsLogin(isLogin);
-        loginRepository.saveOrUpdate(user);
+        accountRepository.updateUser(user);
+    }
+
+    public boolean checkFirst() {
+        LogUtil.d("checkFirst: "+user.isFirst());
+        return user.isFirst();
     }
 
 }

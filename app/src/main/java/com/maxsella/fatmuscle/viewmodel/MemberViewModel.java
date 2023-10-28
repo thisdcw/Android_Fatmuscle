@@ -30,10 +30,12 @@ public class MemberViewModel extends BaseViewModel {
     //修改的Member
     public LiveData<Member> editMember = get_editMember();
 
+    public String msg = "";
 
     public MutableLiveData<Member> get_editMember() {
         return _editMember;
     }
+
     public MutableLiveData<List<Member>> get_members() {
         return _members;
     }
@@ -58,14 +60,24 @@ public class MemberViewModel extends BaseViewModel {
     }
 
     //往数据库添加新Member
-    public void addMember(Member member) {
+    public boolean addMember(Member member) {
         Member lastMember = LitePal.findLast(Member.class);
         if (lastMember == null) {
             member.setId(1);
         } else {
             member.setId(lastMember.getId() + 1);
         }
+        if (member.getNickname().equals("")) {
+            failed = "请输入昵称";
+            return false;
+        }
+        if (memberRepository.verifyName(member.getNickname())) {
+            failed = "昵称重复,请重新输入";
+            return false;
+        }
+        msg = "添加成功";
         memberRepository.saveMember(member);
+        return true;
     }
 
     //通过id从数据库获取Member

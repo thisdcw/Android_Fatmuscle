@@ -5,19 +5,20 @@ import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityAccountManageBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityAccountManageBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 import com.maxsella.fatmuscle.viewmodel.UserInfoViewModel;
 
 public class AccountManageActivity extends BaseActivity {
 
-    ActivityAccountManageBinding accountManageBinding;
+    private ActivityAccountManageBinding accountManageBinding;
     private UserInfoViewModel userInfoViewModel = new UserInfoViewModel();
 
     @Override
     protected void initView() {
         accountManageBinding = DataBindingUtil.setContentView(this, R.layout.activity_account_manage);
+        userInfoViewModel.setLifecycleOwner(this);
         userInfoViewModel.user.observe(this, user -> {
             accountManageBinding.setUserViewmodel(userInfoViewModel);
         });

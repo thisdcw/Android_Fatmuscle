@@ -7,13 +7,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityEditMemberNicknameBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityEditMemberNicknameBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 
 public class EditMemberNicknameActivity extends BaseActivity {
 
-    ActivityEditMemberNicknameBinding binding;
+    private ActivityEditMemberNicknameBinding binding;
 
     @Override
     protected void initView() {

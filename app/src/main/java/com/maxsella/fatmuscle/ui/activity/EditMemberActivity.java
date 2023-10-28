@@ -24,9 +24,9 @@ import com.lxj.xpopupext.listener.CommonPickerListener;
 import com.lxj.xpopupext.listener.TimePickerListener;
 import com.lxj.xpopupext.popup.CommonPickerPopup;
 import com.lxj.xpopupext.popup.TimePickerPopup;
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityEditMemberBinding;
-import com.maxsella.cw.fatmuscle.databinding.DialogModifyHeadBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityEditMemberBinding;
+import com.maxsella.fatmuscle.databinding.DialogModifyHeadBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 import com.maxsella.fatmuscle.common.util.CameraUtils;
 import com.maxsella.fatmuscle.common.util.LogUtil;
@@ -42,9 +42,9 @@ import java.util.Date;
 
 public class EditMemberActivity extends BaseActivity {
 
-    ActivityEditMemberBinding editMemberBinding;
+    private ActivityEditMemberBinding editMemberBinding;
 
-    MemberViewModel memberViewModel = new MemberViewModel();
+    private MemberViewModel memberViewModel = new MemberViewModel();
 
     private Member member1 = new Member();
 

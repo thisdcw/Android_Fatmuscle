@@ -4,13 +4,19 @@
 
     <data>
 
+        <variable
+            name="dateFormat"
+            type="com.maxsella.fatmuscle.common.util.TimeDateUtil" />
+
+        <variable
+            name="viewModel"
+            type="com.maxsella.fatmuscle.viewmodel.RecordViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        tools:context="com.maxsella.fatmuscle.ui.fragment.item.WaistFragment">
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,29 +38,39 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="年"
-                        android:textColor="@color/black" />
+                    <RadioGroup
+                        android:id="@+id/btn_class"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="月"
-                        android:textColor="@color/black" />
+                        <RadioButton
+                            android:id="@+id/btn_week"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="周" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="日"
-                        android:textColor="@color/black" />
+                        <RadioButton
+                            android:id="@+id/btn_month"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="月" />
+
+                        <RadioButton
+                            android:id="@+id/btn_year"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="年" />
+                    </RadioGroup>
                 </LinearLayout>
 
                 <LinearLayout
@@ -90,15 +106,55 @@
             <LinearLayout
                 android:id="@+id/llt_record"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:orientation="horizontal"
                 android:padding="5dp">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="记录"
+                    android:text="@{viewModel.lastRecord.date}"
                     android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@={viewModel.lastRecord.item}"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@={viewModel.lastRecord.mode}"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@={viewModel.lastRecord.thickness}"
+                    android:textColor="@color/black" />
+
+                <com.maxsella.fatmuscle.view.CustomerImageView
+                    android:id="@+id/iv_head"
+                    url="@{viewModel.lastRecord.img}"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/black"
+                    android:gravity="center" />
             </LinearLayout>
 
             <Button

@@ -33,7 +33,7 @@ import java.util.concurrent.Executors;
 public class USBService implements ICommunicateService {
 
     private static final String TAG = "USBService";
-    private static final String ACTION_USB_PERMISSION = "com.maxsella.cw.fatmuscle.USB_PERMISSION";
+    private static final String ACTION_USB_PERMISSION = "com.maxsella.fatmuscle.USB_PERMISSION";
     private static USBService util;
     private static Context mContext;
 

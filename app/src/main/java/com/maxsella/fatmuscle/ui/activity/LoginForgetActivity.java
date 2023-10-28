@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.maxsella.cw.fatmuscle.R;
+import com.maxsella.fatmuscle.R;
 import com.maxsella.fatmuscle.common.util.ActivityStackManager;
 import com.maxsella.fatmuscle.common.util.LogUtil;
-import com.maxsella.cw.fatmuscle.databinding.ActivityLoginForgetBinding;
+import com.maxsella.fatmuscle.databinding.ActivityLoginForgetBinding;
 import com.maxsella.fatmuscle.viewmodel.ForgetViewModel;
 
 public class LoginForgetActivity extends AppCompatActivity {

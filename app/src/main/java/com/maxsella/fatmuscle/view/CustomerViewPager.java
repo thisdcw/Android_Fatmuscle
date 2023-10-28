@@ -8,41 +8,62 @@ import androidx.viewpager.widget.ViewPager;
 
 public class CustomerViewPager extends ViewPager {
 
-    private boolean isCanScroll = true;
+    //是否可以滚动切换
+    private boolean isCanScroll = false;
+    //是否开启切换动画
+    private boolean smoothScrollEnabled = false;
+
+    public boolean isCanScroll() {
+        return isCanScroll;
+    }
+
+    public void setCanScroll(boolean canScroll) {
+        isCanScroll = canScroll;
+    }
+
+    public boolean isSmoothScrollEnabled() {
+        return smoothScrollEnabled;
+    }
+
+    public void setSmoothScrollEnabled(boolean smoothScrollEnabled) {
+        this.smoothScrollEnabled = smoothScrollEnabled;
+    }
+
     public CustomerViewPager(Context context) {
         super(context);
     }
+
     public CustomerViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
-    public void setNoScroll(boolean noScroll) {
-        this.isCanScroll = noScroll;
-    }
 
     @Override
-    public void scrollTo(int x, int y) {
-        super.scrollTo(x, y);
+    public void setCurrentItem(int item) {
+        if (smoothScrollEnabled) {
+            super.setCurrentItem(item, true); // enable smooth scroll
+        } else {
+            super.setCurrentItem(item, false); // disable smooth scroll
+        }
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent arg0) {
-
         if (isCanScroll) {
-            return false;
-        } else {
             return super.onTouchEvent(arg0);
+        } else {
+            return false;
         }
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent arg0) {
         if (isCanScroll) {
-            return false;
-        } else {
             return super.onInterceptTouchEvent(arg0);
+        } else {
+            return false;
         }
-
     }
-
 }
+
+
 

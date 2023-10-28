@@ -5,6 +5,7 @@ import com.maxsella.fatmuscle.db.bean.User;
 
 import org.litepal.LitePal;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -31,5 +32,14 @@ public class MemberHelper {
 
     public Member getMemberById(int id) {
         return LitePal.find(Member.class, id);
+    }
+
+    public List<String> getAllMemberName() {
+        List<Member> listMember = LitePal.select("nickname").where("familyId = ?", String.valueOf(UserHelper.getInstance().getLoginUser().getUserId())).find(Member.class);
+        List<String> names = new ArrayList<>();
+        for (Member member : listMember) {
+            names.add(member.getNickname());
+        }
+        return names;
     }
 }

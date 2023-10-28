@@ -6,30 +6,34 @@ import androidx.lifecycle.MutableLiveData;
 import com.maxsella.fatmuscle.common.base.BaseViewModel;
 import com.maxsella.fatmuscle.common.util.LogUtil;
 import com.maxsella.fatmuscle.db.bean.User;
-import com.maxsella.fatmuscle.repository.UserInfoRepository;
+import com.maxsella.fatmuscle.repository.AccountRepository;
 
 import java.util.regex.Pattern;
 
 public class UserInfoViewModel extends BaseViewModel {
 
-    private UserInfoRepository infoRepository = new UserInfoRepository();
+    private AccountRepository accountRepository = new AccountRepository();
 
-    private MutableLiveData<User> _user = infoRepository.getLoginUser();
+    public LiveData<User> user = getLiveData();
 
-    public LiveData<User> user = get_user();
     public String msg = "";
     private String code = "";
     private String patternPhone = "^1\\d{10}$";
-    String patternEmail = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{1,}$";
+    private String patternEmail = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{1,}$";
 
-    private MutableLiveData<User> get_user() {
+    private MutableLiveData _user;
+
+    private LiveData<User> getLiveData() {
+        if (_user == null) {
+            _user = getLiveData("user");
+            _user = accountRepository.getLoginUser();
+        }
         return _user;
     }
 
-
     public void updateUser(User user) {
-        infoRepository.updateUser(user);
-        _user.postValue(user);
+        accountRepository.updateUser(user);
+        _user.setValue(user);
     }
 
     public void logout() {
@@ -107,10 +111,15 @@ public class UserInfoViewModel extends BaseViewModel {
     }
 
     public void getVerify() {
-        code = infoRepository.getVerify();
+        code = accountRepository.getVerifyCode();
     }
 
-    public void deleteAllUser(){
-        infoRepository.deleteAllUser();
+    public void deleteAllUser() {
+        accountRepository.deleteAllUser();
+    }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
     }
 }

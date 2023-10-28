@@ -6,8 +6,8 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityBindEmailBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityBindEmailBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 import com.maxsella.fatmuscle.common.util.LogUtil;
 import com.maxsella.fatmuscle.db.bean.User;
@@ -18,7 +18,7 @@ import java.util.PrimitiveIterator;
 
 public class BindEmailActivity extends BaseActivity {
 
-    ActivityBindEmailBinding binding;
+    private ActivityBindEmailBinding binding;
 
     private UserInfoViewModel userInfoViewModel = new UserInfoViewModel();
     private String email;

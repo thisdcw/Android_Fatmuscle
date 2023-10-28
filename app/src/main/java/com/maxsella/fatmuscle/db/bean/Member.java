@@ -54,6 +54,9 @@ public class Member extends LitePalSupport {
     }
 
     public String getNickname() {
+        if (nickname==null){
+            nickname = "";
+        }
         return nickname;
     }
 

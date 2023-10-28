@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.imageview.ShapeableImageView;
-import com.maxsella.cw.fatmuscle.R;
+import com.maxsella.fatmuscle.R;
 import com.maxsella.fatmuscle.common.MyApplication;
 
 public class CustomerImageView extends ShapeableImageView {

@@ -6,8 +6,8 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 
-import com.maxsella.cw.fatmuscle.R;
-import com.maxsella.cw.fatmuscle.databinding.ActivityEditTelephoneBinding;
+import com.maxsella.fatmuscle.R;
+import com.maxsella.fatmuscle.databinding.ActivityEditTelephoneBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 import com.maxsella.fatmuscle.common.util.LogUtil;
 import com.maxsella.fatmuscle.db.bean.User;
@@ -15,7 +15,7 @@ import com.maxsella.fatmuscle.viewmodel.UserInfoViewModel;
 
 public class EditTelephoneActivity extends BaseActivity {
 
-    ActivityEditTelephoneBinding editTelephoneBinding;
+    private ActivityEditTelephoneBinding editTelephoneBinding;
 
     private UserInfoViewModel userInfoViewModel = new UserInfoViewModel();
 

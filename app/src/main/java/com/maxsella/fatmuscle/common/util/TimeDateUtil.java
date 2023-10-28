@@ -74,5 +74,9 @@ public class TimeDateUtil {
     private static String format(int time) {
         return String.format(Locale.getDefault(),"%02d", time);
     }
+    public static String formatDateString(Date date) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        return simpleDateFormat.format(date);
+    }
 
 }

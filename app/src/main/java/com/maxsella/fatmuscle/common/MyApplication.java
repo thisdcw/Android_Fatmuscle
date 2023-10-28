@@ -3,6 +3,7 @@ package com.maxsella.fatmuscle.common;
 import android.app.Application;
 import android.util.Log;
 
+import com.maxsella.fatmuscle.common.util.Config;
 import com.maxsella.fatmuscle.common.util.LogUtil;
 
 import org.litepal.LitePal;
@@ -35,6 +36,7 @@ public class MyApplication extends Application {
         AutoSizeConfig.getInstance().setExcludeFontScale(true).setUseDeviceSize(true);
         instance = this;
         LitePal.initialize(instance);
+        Config.mainSP = this.getSharedPreferences("main", 0);
         initOpenCV();
     }
 

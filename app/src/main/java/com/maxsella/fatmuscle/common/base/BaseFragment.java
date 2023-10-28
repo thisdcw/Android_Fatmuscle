@@ -51,7 +51,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if (binding!=null){
+        if (binding != null) {
             initEventAndData();
         }
     }
@@ -73,6 +73,11 @@ public abstract class BaseFragment extends Fragment {
     public static void navigateToActivity(Activity activity, Class<?> targetActivityClass) {
         ActivityStackManager.getInstance().startActivityNoFinish(activity, targetActivityClass);
     }
+
+    public static void navigateToActivity(Activity activity, Class<?> targetActivityClass, Bundle bundle) {
+        ActivityStackManager.getInstance().startActivityNoFinish(activity, targetActivityClass, bundle);
+    }
+
     public static void navigateToActivityWithFinish(Activity activity, Class<?> targetActivityClass) {
         ActivityStackManager.getInstance().startActivity(activity, targetActivityClass);
     }

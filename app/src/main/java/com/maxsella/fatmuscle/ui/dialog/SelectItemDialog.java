@@ -8,11 +8,19 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.maxsella.cw.fatmuscle.databinding.DialogSelectItemBinding;
+import com.maxsella.fatmuscle.common.util.Config;
+import com.maxsella.fatmuscle.common.util.Constant;
+import com.maxsella.fatmuscle.common.util.LogUtil;
+import com.maxsella.fatmuscle.databinding.DialogSelectItemBinding;
 
 public class SelectItemDialog extends Dialog {
 
-    private DialogSelectItemBinding selectItemBinding;
+    private DialogSelectItemBinding binding;
+
+    private String mode = Constant.FAT;
+    private String item = Constant.MUSCLE;
+
+    private String selectMode = mode + item;
 
     public SelectItemDialog(@NonNull Context context) {
         super(context);
@@ -32,16 +40,56 @@ public class SelectItemDialog extends Dialog {
     }
 
     private void initData(Context context) {
-        selectItemBinding = DialogSelectItemBinding.inflate(LayoutInflater.from(context));
-        setContentView(selectItemBinding.getRoot());
-        selectItemBinding.fatItem.setOnClickListener(v -> selectItemBinding.lytFat.setVisibility(View.VISIBLE));
-        selectItemBinding.muscleItem.setOnClickListener(v -> selectItemBinding.lytFat.setVisibility(View.GONE));
+        binding = DialogSelectItemBinding.inflate(LayoutInflater.from(context));
+        setContentView(binding.getRoot());
+        initClick();
+    }
+
+    private void initClick() {
+        binding.fatItem.setOnClickListener(v -> {
+            binding.lytFat.setVisibility(View.VISIBLE);
+            mode = Constant.FAT;
+        });
+        binding.muscleItem.setOnClickListener(v -> {
+            binding.lytFat.setVisibility(View.GONE);
+            mode = Constant.MUSCLE;
+        });
+        binding.waist.setOnClickListener(v -> {
+            if (mode.equals(Constant.FAT)) {
+                item = Constant.WAIST;
+            } else {
+                item = Constant.ABDOMEN;
+            }
+            LogUtil.d("当前选择的是: " + item);
+        });
+        binding.arm.setOnClickListener(v -> {
+            item = Constant.ARM;
+            LogUtil.d("当前选择的是: " + item);
+        });
+        binding.thigh.setOnClickListener(v -> {
+            item = Constant.THIGH;
+            LogUtil.d("当前选择的是: " + item);
+        });
+        binding.crus.setOnClickListener(v -> {
+            item = Constant.CRUS;
+            LogUtil.d("当前选择的是: " + item);
+        });
+        binding.normal.setOnClickListener(v -> {
+            item = Constant.NORMAL;
+            LogUtil.d("当前选择的是: " + item);
+        });
+        binding.confirmBtn.setOnClickListener(v -> {
+            selectMode = mode + item;
+            LogUtil.d("当前选择的模式是: " + selectMode);
+            Config.saveOrUpdateSelectMode(selectMode);
+            dismiss();
+        });
     }
 
     @Override
     public void dismiss() {
         super.dismiss();
         // 清理资源
-        selectItemBinding = null;
+        binding = null;
     }
 }

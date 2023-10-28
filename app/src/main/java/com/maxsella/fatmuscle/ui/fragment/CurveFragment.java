@@ -11,10 +11,10 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.maxsella.cw.fatmuscle.R;
+import com.maxsella.fatmuscle.R;
 import com.maxsella.fatmuscle.common.base.BaseFragment;
 import com.maxsella.fatmuscle.common.util.LogUtil;
-import com.maxsella.cw.fatmuscle.databinding.FragmentCurveBinding;
+import com.maxsella.fatmuscle.databinding.FragmentCurveBinding;
 import com.maxsella.fatmuscle.ui.adapter.CurveFragmentAdapter;
 import com.maxsella.fatmuscle.ui.fragment.item.AbdomenFragment;
 import com.maxsella.fatmuscle.ui.fragment.item.ArmFragment;
@@ -31,8 +31,6 @@ public class CurveFragment extends BaseFragment {
     private CurveViewModel mViewModel;
 
     private FragmentCurveBinding curveBinding;
-
-
     /**
      * 标题数组
      */
