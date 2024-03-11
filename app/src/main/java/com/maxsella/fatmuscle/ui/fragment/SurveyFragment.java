@@ -1,33 +1,18 @@
 package com.maxsella.fatmuscle.ui.fragment;
 
-import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
-
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.maxsella.fatmuscle.R;
 import com.maxsella.fatmuscle.common.base.BaseFragment;
 import com.maxsella.fatmuscle.common.util.Config;
 import com.maxsella.fatmuscle.common.util.LogUtil;
 import com.maxsella.fatmuscle.databinding.FragmentSurveyBinding;
-import com.maxsella.fatmuscle.databinding.SelectSlideTemplateBinding;
 import com.maxsella.fatmuscle.db.bean.Member;
 import com.maxsella.fatmuscle.ui.activity.DeviceInfoActivity;
 import com.maxsella.fatmuscle.ui.activity.WorkActivity;
-import com.maxsella.fatmuscle.ui.adapter.RecordAdapter;
 import com.maxsella.fatmuscle.ui.adapter.SelectAdapter;
-import com.maxsella.fatmuscle.ui.dialog.SelectItemDialog;
-import com.maxsella.fatmuscle.ui.dialog.SelectUserDialog;
-import com.maxsella.fatmuscle.view.EasyPickerView;
+import com.maxsella.fatmuscle.view.dialog.SelectItemDialog;
+import com.maxsella.fatmuscle.view.dialog.SelectUserDialog;
 import com.maxsella.fatmuscle.view.dialog.SlideDialog;
 import com.maxsella.fatmuscle.viewmodel.MemberViewModel;
 import com.maxsella.fatmuscle.viewmodel.RecordViewModel;

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android_Fatmuscle</string>
+    <string name="other_guide_tip">- Apply the coupler well \n- Hold down the button to gently swipe</string>
+    <string name="part_other_two">General 2</string>
 </resources>

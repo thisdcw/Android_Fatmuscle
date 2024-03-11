@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="leve_mark_color">
+        <item>@color/standard_ggx</item>
+        <item>@color/standard_jzx</item>
+        <item>@color/standard_rgx</item>
+        <item>@color/standard_fmx</item>
+        <item>@color/standard_zrx</item>
+        <item>@color/standard_fpx</item>
+    </array>
+    <array name="leve_mark_icon">
+        <item>@drawable/dingwei_leve1</item>
+        <item>@drawable/dingwei_leve2</item>
+        <item>@drawable/dingwei_leve3</item>
+        <item>@drawable/dingwei_leve4</item>
+        <item>@drawable/dingwei_leve5</item>
+        <item>@drawable/dingwei_leve6</item>
+    </array>
+    <array name="leve_standard_str">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </array>
+</resources>

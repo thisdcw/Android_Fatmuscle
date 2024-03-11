@@ -1,5 +1,6 @@
 package com.maxsella.fatmuscle.common.util;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.maxsella.fatmuscle.db.helper.UserHelper;
@@ -13,7 +14,13 @@ public class Config {
     public static String DEFAULT_MEMBER = "unknown";
     public static final String DEFAULT_MODE = "fat_waist";
     public static SharedPreferences mainSP;
+    public static final boolean isProduct = false;
 
+    private static final String name = "sdk_config";
+
+    public static int getInt(Context context, String str, int i) {
+        return context.getSharedPreferences(name, 0).getInt(str, i);
+    }
     public static void saveOrUpdateSelectMode(String selectMode) {
         saveSync(Constant.SELECT_MODE, selectMode);
     }

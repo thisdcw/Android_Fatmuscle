@@ -30,7 +30,6 @@ public class LoginViewModel extends BaseViewModel {
         }
         if (user.getPassword().equals(password)) {
             changeLoginStatus(1);
-            Config.saveOrUpdateChooseMember(UserHelper.getInstance().getLoginUser().getNickname());
             LogUtil.d(user.toString());
             return true;
         }
@@ -51,6 +50,7 @@ public class LoginViewModel extends BaseViewModel {
     public void changeLoginStatus(int isLogin) {
         user.setIsLogin(isLogin);
         accountRepository.updateUser(user);
+        Config.saveOrUpdateChooseMember(UserHelper.getInstance().getLoginUser().getNickname());
     }
 
     public boolean checkFirst() {

@@ -275,7 +275,7 @@ public class UserInfoActivity extends BaseActivity {
         LogUtil.d("android 11");
         if (isAndroid11()) {
             // 请求打开外部存储管理
-            // requestManageExternalStorage();
+//             requestManageExternalStorage();
             openAlbum();
         } else {
             if (!isAndroid6()) {

@@ -22,6 +22,7 @@ import com.maxsella.fatmuscle.common.util.ActivityStackManager;
 public abstract class BaseFragment extends Fragment {
 
     protected AppCompatActivity context = null;
+
     protected ViewDataBinding binding = null;
 
     public abstract void initEventAndData();

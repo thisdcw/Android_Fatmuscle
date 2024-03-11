@@ -29,21 +29,18 @@ public class MainActivity extends BaseActivity {
     private void initEvent() {
         LogUtil.d("这是一条测试");
         NavController nav = Navigation.findNavController(this, R.id.nav_host_fragment);
-        mainBinding.bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.survey_fragment) {
-                    nav.navigate(R.id.survey_fragment);
-                    return true;
-                } else if (item.getItemId() == R.id.curve_fragment) {
-                    nav.navigate(R.id.curve_fragment);
-                    return true;
-                } else if (item.getItemId() == R.id.profile_fragment) {
-                    nav.navigate(R.id.profile_fragment);
-                    return true;
-                } else {
-                    return false;
-                }
+        mainBinding.bottomNavigation.setOnNavigationItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.survey_fragment) {
+                nav.navigate(R.id.survey_fragment);
+                return true;
+            } else if (item.getItemId() == R.id.curve_fragment) {
+                nav.navigate(R.id.curve_fragment);
+                return true;
+            } else if (item.getItemId() == R.id.profile_fragment) {
+                nav.navigate(R.id.profile_fragment);
+                return true;
+            } else {
+                return false;
             }
         });
     }

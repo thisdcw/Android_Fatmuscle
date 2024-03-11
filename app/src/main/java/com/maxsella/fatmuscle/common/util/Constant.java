@@ -17,4 +17,5 @@ public class Constant {
     public static final String ALL = "显示全部测量记录";
     public static final String ONLY_FAT = "只显示脂肪记录";
     public static final String ONLY_MUSCLE = "只显示肌肉记录";
+    public static final String CUR_UNIT = "";
 }

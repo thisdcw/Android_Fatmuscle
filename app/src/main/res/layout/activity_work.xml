@@ -34,11 +34,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="探索中" />
-
-            <ImageView
-                android:layout_width="300dp"
-                android:layout_height="350dp"
-                android:background="@color/black" />
+            <!--
+                        <com.maxsella.fatmuscle.view.widget.MeasureView
+                            android:id="@+id/v_measure"
+                            android:layout_width="300dp"
+                            android:layout_height="350dp" />-->
         </LinearLayout>
 
         <LinearLayout
@@ -52,11 +52,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="皮下组织声像图" />
-
-            <ImageView
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:background="@color/arc2" />
+            <!--
+                        <com.maxsella.fatmuscle.view.widget.FatStandardView
+                            android:id="@+id/fat_standard"
+                            android:layout_width="300dp"
+                            android:layout_height="200dp" />-->
+            <TextView
+                android:id="@+id/usb_info"
+                android:layout_width="match_parent"
+                android:layout_height="500dp" />
         </LinearLayout>
 
         <LinearLayout

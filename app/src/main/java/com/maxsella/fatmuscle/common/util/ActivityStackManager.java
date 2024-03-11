@@ -8,21 +8,17 @@ import java.util.Stack;
 
 public class ActivityStackManager {
     private static Stack<Activity> activityStack;
-    private static ActivityStackManager instance;
 
     private ActivityStackManager() {
     }
 
+    private static final class InstanceHolder {
+        static final ActivityStackManager instance = new ActivityStackManager();
+    }
+
     public static ActivityStackManager getInstance() {
-        if (instance == null) {
-            //这里加锁来保证单例的线程安全性,避免在出现多个线程访问时创建多个实例,违反单例模式的设计原则
-            synchronized (ActivityStackManager.class) {
-                if (instance == null) {
-                    instance = new ActivityStackManager();
-                }
-            }
-        }
-        return instance;
+        //这里加锁来保证单例的线程安全性,避免在出现多个线程访问时创建多个实例,违反单例模式的设计原则
+        return InstanceHolder.instance;
     }
 
     /**

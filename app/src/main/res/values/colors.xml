@@ -9,4 +9,18 @@
     <color name="arc2">#37d547</color>
     <color name="arc3">#f86669</color>
     <color name="transparent">#00000000</color>
+    <color name="standard_thin">#4ba9f1</color>
+    <color name="standard_normal">#51b558</color>
+    <color name="grey_low">#cccccc</color>
+    <string name="standard_thin">Fit</string>
+    <string name="standard_normal">Normal</string>
+    <string name="standard_thickness">Excessive</string>
+    <string name="app_measure_resule_unit">Unit: mm</string>
+    <color name="standard_thickness">#ee5132</color>
+    <color name="standard_fmx">#f59a23</color>
+    <color name="standard_fpx">#ea0707</color>
+    <color name="standard_ggx">#4ba9f1</color>
+    <color name="standard_jzx">#51b558</color>
+    <color name="standard_zrx">#f6530b</color>
+    <color name="standard_rgx">#bad744</color>
 </resources>

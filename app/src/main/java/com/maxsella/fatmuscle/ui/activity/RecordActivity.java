@@ -1,20 +1,15 @@
 package com.maxsella.fatmuscle.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 
 import com.maxsella.fatmuscle.R;
 import com.maxsella.fatmuscle.common.util.Config;
 import com.maxsella.fatmuscle.common.util.Constant;
 import com.maxsella.fatmuscle.common.util.LogUtil;
 import com.maxsella.fatmuscle.databinding.ActivityRecordBinding;
-import com.maxsella.fatmuscle.databinding.ActivityReportBinding;
 import com.maxsella.fatmuscle.common.base.BaseActivity;
 import com.maxsella.fatmuscle.ui.adapter.RecordAdapter;
 import com.maxsella.fatmuscle.view.dialog.SlideDialog;
