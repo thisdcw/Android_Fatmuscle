@@ -22,6 +22,9 @@ public class TimeDateUtil {
 
         return simpleDateFormat.format(date);
     }
+    public static String getDate2String(long j, String str) {
+        return new SimpleDateFormat(str, Locale.getDefault()).format(new Date(j));
+    }
 
     public static String getMinAndSecondBySeconds(long time) {
         int min = (int) (time / 60);

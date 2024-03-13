@@ -37,8 +37,8 @@ public class USBService implements ICommunicateService {
     private static USBService util;
     private static Context mContext;
 
-    private static final int COMM_PRODUCT_ID = 29987;
-    private static final int COMM_VENDOR_ID = 6790;
+    private static final int COMM_PRODUCT_ID = 6014;
+    private static final int COMM_VENDOR_ID = 0403;
 
     private UsbDevice usbDevice; //目标USB设备
     private UsbManager usbManager;
@@ -140,6 +140,7 @@ public class USBService implements ICommunicateService {
             UsbDevice device = deviceIterator.next();
             Log.i(TAG, "vendorID--" + device.getVendorId() + "ProductId--" + device.getProductId());
             if (device.getVendorId() == vendorId && device.getProductId() == productId) {
+
                 return device; // 获取USBDevice
             }
         }

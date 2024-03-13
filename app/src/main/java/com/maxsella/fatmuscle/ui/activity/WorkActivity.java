@@ -4,6 +4,8 @@ import android.content.Context;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbManager;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.databinding.DataBindingUtil;
 
@@ -15,6 +17,11 @@ import com.maxsella.fatmuscle.common.base.BaseActivity;
 import com.maxsella.fatmuscle.common.util.Config;
 import com.maxsella.fatmuscle.common.util.LogUtil;
 import com.maxsella.fatmuscle.databinding.ActivityWorkBinding;
+import com.maxsella.fatmuscle.entity.FatRecord;
+import com.maxsella.fatmuscle.sdk.fat.entity.BitmapMsg;
+import com.maxsella.fatmuscle.sdk.fat.entity.DeviceMsg;
+import com.maxsella.fatmuscle.sdk.fat.manager.MxsellaDeviceManager;
+import com.maxsella.fatmuscle.sdk.fat.utils.BitmapUtil;
 import com.maxsella.fatmuscle.viewmodel.RecordViewModel;
 
 import java.io.IOException;
@@ -27,6 +34,7 @@ public class WorkActivity extends BaseActivity {
     private ActivityWorkBinding workBinding;
 
     private RecordViewModel recordViewModel = new RecordViewModel();
+    private static final String TAG = "MuscleMeasureResultActivity";
 
     @Override
     protected void initView() {
@@ -34,7 +42,13 @@ public class WorkActivity extends BaseActivity {
         workBinding = DataBindingUtil.setContentView(this, R.layout.activity_work);
         initClick();
 
-        usbTest();
+//        usbTest();
+    }
+
+    @Override
+    public void initGetData() {
+        super.initGetData();
+
     }
 
     private void initClick() {
@@ -43,6 +57,9 @@ public class WorkActivity extends BaseActivity {
             String mode = s[0];
             String item = s[1];
             recordViewModel.imitateAddRecord(item, mode);
+        });
+        workBinding.btnSave.setOnClickListener(v->{
+            navTo(FatMeasurePlusActivity.class);
         });
     }
 
@@ -90,7 +107,5 @@ public class WorkActivity extends BaseActivity {
             }
         }
     }
-
-
 
 }

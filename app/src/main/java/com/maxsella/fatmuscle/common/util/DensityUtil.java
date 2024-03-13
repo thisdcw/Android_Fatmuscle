@@ -3,6 +3,8 @@ package com.maxsella.fatmuscle.common.util;
 import android.content.Context;
 import android.util.TypedValue;
 
+import com.maxsella.fatmuscle.common.MyApplication;
+
 import org.xutils.x;
 
 public class DensityUtil {
@@ -21,12 +23,23 @@ public class DensityUtil {
         return density;
     }
 
+    public static float getDensity() {
+        if (density <= 0.0f) {
+            density = MyApplication.getInstance().getResources().getDisplayMetrics().density;
+        }
+        return density;
+    }
+
     public static int dip2px(Context context, float f) {
         return (int) ((f * getDensity(context)) + 0.5f);
     }
 
+    public static int dip2px(float f) {
+        return (int) ((f * getDensity()) + 0.5f);
+    }
+
     public static int sp2px(Context context, int i) {
-        return (int) TypedValue.applyDimension(2, i, context.getResources().getDisplayMetrics());
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, i, context.getResources().getDisplayMetrics());
     }
 
     public static int px2dip(Context context, float f) {

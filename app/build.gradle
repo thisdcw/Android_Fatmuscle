@@ -18,7 +18,7 @@ android {
     dataBinding {
         enabled = true
     }
-    viewBinding{
+    viewBinding {
         enabled = true
     }
     sourceSets {
@@ -53,8 +53,8 @@ android {
 
 dependencies {
 
-//    implementation(project(":opencv"))
-//    implementation files('..\\libs\\d2xx.jar')
+    implementation(project(":opencv"))
+    implementation files('..\\lib\\d2xx.jar')
 
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -108,4 +108,15 @@ dependencies {
 
     implementation 'com.amap.api:location:5.5.0'
     implementation 'com.github.mik3y:usb-serial-for-android:3.7.0'
+
+    // https://mvnrepository.com/artifact/com.alibaba/fastjson
+    implementation group: 'com.alibaba', name: 'fastjson', version: '2.0.20.android'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-smile
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-smile', version: '2.12.5'
+
+// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }

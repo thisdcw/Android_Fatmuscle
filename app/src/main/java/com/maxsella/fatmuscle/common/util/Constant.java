@@ -5,7 +5,8 @@ public class Constant {
     public static final String IMAGEPATH = "";
     public static final String CHOOSE_MEMBER = "choose_member";
     public static final String SELECT_MODE = "select_mode";
-
+    public static final String IS_FIRST_OPEN_MEASURE_LINE_GUIDE = "is_first_open_measure_line_guide";
+    public static boolean isProduct = false;
     public static final String FAT = "fat_";
     public static final String MUSCLE = "muscle_";
     public static final String WAIST = "waist";
